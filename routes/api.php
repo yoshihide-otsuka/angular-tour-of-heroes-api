@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\CorrelationController;
+use App\Http\Controllers\CorrelationListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,8 @@ Route::get('/heroes/{id}',[HeroController::class, 'show']);
 Route::post('/heroes',[HeroController::class, 'create']);
 Route::put('/heroes',[HeroController::class, 'update']);
 Route::delete('/heroes/{id}',[HeroController::class, 'delete']);
+
+Route::get('/correlations',[CorrelationController::class, 'index']);
+
+Route::get('/correlationlists/{id}',[CorrelationListController::class, 'index']);
+Route::post('/correlationlists',[CorrelationListController::class, 'create']);
